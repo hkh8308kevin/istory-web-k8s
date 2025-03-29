@@ -133,7 +133,7 @@ jobs:
           sudo mv kustomize /usr/local/bin
       - name: kustomize update image yaml
         run: |
-          cd overlay/awd-dev
+          cd overlay/aws-dev
           kustomize edit set image istory=hkh8308kevin/istory:${{ github.run_number }}
       - name: push yaml
         run: |
@@ -141,5 +141,3 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -am "Update image tag to ${{  github.run_number }}"
           git push origin main
-
-
