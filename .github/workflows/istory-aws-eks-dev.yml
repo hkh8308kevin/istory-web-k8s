@@ -129,7 +129,7 @@ jobs:
           # cat istory-app-deploy.yaml
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          sed -i "s|newTag:.*|newTag: ${{ env.DOCKER_TAG }}|g" overlay/aws-dev/kustomization.yaml
+          sed -i "s|newTag:.*|newTag: ${{ env.DOCKER_TAG }}|g" istory-platform/overlay/aws-dev/kustomization.yaml
           git commit -am "Update image tag to ${{ env.DOCKER_TAG }}"
           git push origin main
           # sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}\/istory.*|image: ${{ secrets.DOCKER_USERNAME }}\/istory:${{ env.DOCKER_TAG }}|g" istory-app-deploy.yaml
